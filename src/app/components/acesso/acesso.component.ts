@@ -10,17 +10,23 @@ import { IAcesso } from 'src/app/interfaces/iacesso';
 export class AcessoComponent {
 
 
-  @Input() dataSource : IAcesso[] = [];
+  @Input() acessoList : IAcesso[] = [];
+  displayedColumns =  ['login','senha'];
 
   constructor(private acessoService : AcessoService){
 
   }
 
+  ngOnInit(){
+    this.pegarTodos();
+  }
    pegarTodos(){
     return this.acessoService.list().subscribe(
       acesso =>{
-         this.dataSource = acesso;
+         this.acessoList = acesso;
       }
     )
    }
+
+
 }

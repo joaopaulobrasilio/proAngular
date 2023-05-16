@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http'
-import { API_PATH } from 'src/environments/environment.development';
-import { Observable, catchError, first, retry } from 'rxjs';
+
+import { Observable, catchError, first, retry, tap } from 'rxjs';
 import { IAcesso } from '../interfaces/iacesso';
 
 
@@ -9,18 +9,18 @@ import { IAcesso } from '../interfaces/iacesso';
   providedIn: 'root'
 })
 export class AcessoService {
-   ///private readonly API = 'http://localhost:8080/api/'
+   private readonly API = 'http://localhost:4200/api'
+
   constructor(private httpClient : HttpClient) { }
 
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }
-
        list():Observable<any>{
-        return this.httpClient.get(`${API_PATH}`);
+        return this.httpClient.get(this.API).pipe(
+          tap( acessos =>{
+             console.log(acessos);
+          })
+        )
+
 
      }
 }
