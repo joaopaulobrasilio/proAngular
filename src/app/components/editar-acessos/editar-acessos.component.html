@@ -1,0 +1,35 @@
+<mat-toolbar id="toolbar">
+
+</mat-toolbar>
+<br>
+<div>
+  <fieldset class="scheduler-border">
+
+    <legend class="scheduler-border">Editar Acesso</legend>
+    <div class="form-row" [formGroup]="formulario">
+      <div class="form-group col-md-3">
+        <label for="inputLogin">Login</label>
+        <input type="email" class="form-control" formControlName="login">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputSenha">Senha</label>
+        <input type="password" class="form-control"formControlName="senha">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputDescricao">Descrição</label>
+        <input type="text" class="form-control"  formControlName="descricao">
+      </div>
+    </div>
+    <div>
+      <button mat-fab id="button">
+        <mat-icon>send</mat-icon>
+      </button>
+        <button mat-fab id="button" (click)="voltarParaAcessos()">
+          <mat-icon> keyboard_return</mat-icon>
+        </button>
+
+    </div>
+
+</fieldset>
+</div>
+
