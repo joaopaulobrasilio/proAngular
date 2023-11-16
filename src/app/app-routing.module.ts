@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: () => import('./components/acesso/acesso.module').then(m => m.AcessoModule)
   },
 
+  {
+    path: 'resetpassword',
+    loadChildren: () => import('./components/enviar-email/enviar-email.module').then(m => m.EnviarEmailModule)
+  }
 
 
 ];
