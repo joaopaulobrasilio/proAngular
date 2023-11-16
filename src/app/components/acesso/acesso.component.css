@@ -4,22 +4,52 @@
 }
 
 #toolbar{
-  background-color:#f2f2f2;
-
+  background-color:#ebdfdf;
+  width: 100%;
 
 }
 #table{
 width: 100%;
+margin: 10px 10px 10px 10px;
+position: relative;
+
 
 
 }
+
 #button{
-display:  inline-block;
-margin: 5px 5px 5px 5px ;
-padding: 5px 5px 5px 5px;
-background-color: #701111 ;
+  border-radius: 0.5rem;
+  margin: 0 2px 0 5px;
+  margin-top: 2px;
+
+  font-size: small;
+
+
 }
-#coluna{
+#buttonOlho{
   position: fixed;
-  margin: 10px 10px 10px 10px;
+  border-radius: 0.5rem;
+  margin: 0 10px 0 5px;
+  margin-top: 3px;
+  margin-right: 1px;
+  height: 35px
+
+
 }
+#icon{
+ margin: 0 0 2px 2px ;
+}
+.rodape{
+  position: fixed;
+  margin-top: 2%;
+  width: 100%;
+  text-align: center;
+
+  background-color: red;
+}
+input{
+  border: none;
+  background-color: white;
+
+}
+

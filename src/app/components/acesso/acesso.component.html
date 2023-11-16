@@ -3,7 +3,8 @@
 </mat-toolbar>
 <div id="table" >
 
-  <table mat-table [dataSource]="listAcessos" class="mat-elevation-z8">
+
+ <table mat-table [dataSource]="listAcessos" class="mat-elevation-z8">
     <!-- Login -->
 
     <div id="coluna">
@@ -15,7 +16,8 @@
       <!-- Senha -->
       <ng-container matColumnDef="senha">
         <th mat-header-cell *matHeaderCellDef>Senha</th>
-        <td mat-cell *matCellDef="let acesso">{{ acesso.senha }}</td>
+        <td mat-cell *matCellDef="let acesso" ><input id="inputPassword"  [type]="password" disabled="true" value="{{ acesso.senha }}" readonly>
+          </td>
       </ng-container>
 
       <!-- Descrição -->
@@ -34,20 +36,30 @@
       <ng-container matColumnDef="ações">
         <th mat-header-cell *matHeaderCellDef>Ações
         </th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-mini-fab id="button"(click)="enviarParaEdicao()">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button mat-mini-fab id="button" class="del">
-            <mat-icon>delete</mat-icon>
-          </button>
+        <td  id="buttons" mat-cell *matCellDef="let acesso" class="td-buttons">
+            <button id="button" type="button" class="btn btn-info"  (click)="enviarParaEdicao(acesso.id)">Editar</button>
+            <button id="button" type="button" class="btn btn-danger"(click)="deletar(acesso.id)">Apagar</button>
+
+
+            <button  id="buttonOlho"   *ngIf="botaoAberto" type="button" class="btn btn-secondary" name="fechado" (click)="mostrarSenha()" >
+            <mat-icon id="icon">remove_red_eye</mat-icon>
+              </button>
+              <button  id="buttonOlho"  *ngIf="botaoFechado" type="button" class="btn btn-secondary"
+                 (click)=" esconderSenha()"
+              >
+              <mat-icon id="icon">visibility_off</mat-icon>
+              </button>
+
+
         </td>
+
       </ng-container>
       <ng-container matColumnDef="novo">
         <th mat-header-cell *matHeaderCellDef>
-          <button mat-fab id="button" (click)="criarNovoAcesso()">
-            <mat-icon>add</mat-icon>
-          </button>
+          <button  id="button" type="button" class="btn btn-primary"(click)=" criarNovoAcesso()">
+
+            Novo</button>
+
         </th>
 
         <td mat-cell *matCellDef="let element">
@@ -58,8 +70,16 @@
      <mat-spinner></mat-spinner>
     </ng-template>
 
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-</div>
 
+
+</div>
+<mat-paginator [length]="totalDados"
+[pageSize]="limitPorPagina"
+(page)="pegarTodos($event)"
+[pageSizeOptions]="[5, 10, 12, 25, 100]"
+aria-label="Select page">
+</mat-paginator>
