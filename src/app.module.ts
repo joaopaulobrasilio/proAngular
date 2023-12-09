@@ -5,23 +5,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { AcessoModule } from './components/acesso/acesso.module';
+import { AppRoutingModule } from './app/app-routing.module';
+import { AppComponent } from './app/app.component';
+import { AcessoModule } from './app/components/acesso/acesso.module';
 
-import { SpinnerComponent } from './components/spinner/spinner.component';
-import { LoadingInterceptor } from './interceptors/loading.interceptor';
-import { NewacessoModule } from './components/new-acessos/newacesso.module';
+import { SpinnerComponent } from './app/components/spinner/spinner.component';
+import { LoadingInterceptor } from './app/interceptors/loading.interceptor';
+import { NewacessoModule } from './app/components/new-acessos/newacesso.module';
+
+import { LoginModule } from './app/components/login/login.module';
+import { TokenInterceptor } from './app/token.interceptor';
 
 
-import { TokenInterceptor } from './token.interceptor';
-
-
-import { EditarAcessoModule } from './components/editar-acessos/editar-acesso.module';
+import { EditarAcessoModule } from './app/components/editar-acessos/editar-acesso.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { SharedModule } from './shared/shared.module';
-import { EnviarEmailModule } from './components/enviar-email/enviar-email.module';
-
+import { SharedModule } from './app/shared/shared.module';
 
 
 
@@ -29,7 +27,7 @@ import { EnviarEmailModule } from './components/enviar-email/enviar-email.module
 @NgModule({
   declarations: [
     AppComponent,
-    SpinnerComponent,
+    SpinnerComponent
 
 
 
@@ -44,8 +42,7 @@ import { EnviarEmailModule } from './components/enviar-email/enviar-email.module
     NewacessoModule,
     EditarAcessoModule,
     ModalModule.forRoot(),
-    SharedModule,
-    EnviarEmailModule
+    SharedModule
 
 
 

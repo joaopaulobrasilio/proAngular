@@ -18,7 +18,6 @@ export class NewAcessoService {
 
     }
 
-
    voltarParaListaDeAcessos(){
     this.router.navigate(['acessos'])
    }

@@ -41,7 +41,6 @@ export class AcessoService {
   }
 
 
-
   redirecionarParaEdicao(id: number) {
     this.router.navigate([`/acessos/${id}/editarAcesso`]);
   }

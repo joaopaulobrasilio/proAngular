@@ -55,7 +55,9 @@ export class LoginComponent {
     this.mostrarLabel = false;
   }
 
-  navegarParaTelaDeEnvioDeEmail(){
-    this.router.navigate(['resetpassword'])
+
+  navagarTelaRefinirSenha(){
+    return this.service.navegarParaTelaDeEnvioDeEmail();
   }
+
 }

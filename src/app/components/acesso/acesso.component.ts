@@ -114,3 +114,9 @@ export class AcessoComponent {
     this.acessoService.redirecionarParaEdicao(id);
   }
 }
+
+
+
+
+
+
