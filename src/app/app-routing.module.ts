@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
+import { AppModule } from "src/app.module";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "acessos" },

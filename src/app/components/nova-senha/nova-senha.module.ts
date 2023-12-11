@@ -18,9 +18,6 @@ import { NovaSenhaRoutingModule } from './nova-senha-routing.module';
     MatToolbarModule
 
 
-  ],
-  exports:[
-  NovaSenhaComponent
   ]
 })
 export class NovaSenhaModule { }

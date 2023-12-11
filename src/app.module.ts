@@ -13,13 +13,15 @@ import { SpinnerComponent } from './app/components/spinner/spinner.component';
 import { LoadingInterceptor } from './app/interceptors/loading.interceptor';
 import { NewacessoModule } from './app/components/new-acessos/newacesso.module';
 
-import { LoginModule } from './app/components/login/login.module';
 import { TokenInterceptor } from './app/token.interceptor';
 
 
 import { EditarAcessoModule } from './app/components/editar-acessos/editar-acesso.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SharedModule } from './app/shared/shared.module';
+import { RedefinirRoutingModule } from './app/components/redefinir-senha/redefinir-routing.module';
+import { RedefinirSenhaModule } from './app/components/redefinir-senha/redefinir-senha.module';
+import { NovaSenhaModule } from './app/components/nova-senha/nova-senha.module';
 
 
 
@@ -28,6 +30,7 @@ import { SharedModule } from './app/shared/shared.module';
   declarations: [
     AppComponent,
     SpinnerComponent
+
 
 
 
@@ -42,7 +45,9 @@ import { SharedModule } from './app/shared/shared.module';
     NewacessoModule,
     EditarAcessoModule,
     ModalModule.forRoot(),
-    SharedModule
+    SharedModule,
+    RedefinirSenhaModule,
+    NovaSenhaModule
 
 
 

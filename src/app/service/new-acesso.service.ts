@@ -11,12 +11,13 @@ export class NewAcessoService {
   private readonly API = 'http://localhost:4200/api'
   constructor(private router: Router, private  httpClient : HttpClient) { }
 
-
   postAcesso(acesso: any):Observable<any>{
-    //const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+
       return this.httpClient.post<IAcesso>(`${this.API}/acessos/salvar`, acesso );
 
     }
+
 
    voltarParaListaDeAcessos(){
     this.router.navigate(['acessos'])
