@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NovaSenhaComponent } from './nova-senha.component';
 
 const routes : Routes = [
-  {path: 'novasenha', component: NovaSenhaComponent}
+  {path:"" , component: NovaSenhaComponent}
   ]
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -8,8 +9,17 @@ import { Component } from '@angular/core';
 })
 export class NovaSenhaComponent {
 
+  formulario! : FormGroup;
 
 
 
+  onSubmit(){}
+
+
+
+
+  voltarParaLogin(){
+
+  }
 
 }

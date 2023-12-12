@@ -15,7 +15,8 @@ import { NovaSenhaRoutingModule } from './nova-senha-routing.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    NovaSenhaRoutingModule
 
 
   ]

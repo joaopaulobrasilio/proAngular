@@ -17,7 +17,7 @@ LoginComponent
 
   ],
   exports:[
-
+  LoginComponent
   ]
 })
 export class LoginModule { }
