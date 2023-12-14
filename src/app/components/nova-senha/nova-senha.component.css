@@ -1,12 +1,13 @@
-#div{
+#div {
   margin: auto;
   position: center;
 
 }
+
 fieldset.scheduler-border {
   border: 1px solid silver !important;
   padding: 1.4em !important;
-  margin:  0 1.5em 0 !important;
+  margin: 0 1.5em 0 !important;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
   box-shadow: 0px 0px 0px 0px #000;
 }
@@ -20,28 +21,43 @@ legend.scheduler-border {
   border-bottom: none;
 
 }
-#buttonSubmit{
+
+#buttonSubmit {
   border-radius: 0.5rem;
   margin: 0 10px 0 5px;
   margin-top: 2px;
   position: relative;
   height: 35px
-
 }
-#buttonReturn{
+
+#buttonReturn {
   border-radius: 0.5rem;
   margin: 0 10px 0 5px;
   margin-top: 2px;
   position: relative;
   height: 35px
-
 }
-#checkboxMostrarSenha{
+
+.form-check-input {
   position: relative;
-  margin-left: 30px;
+  margin-left: 10px;
   margin-right: 4px;
-  margin-top: 20px;
+  margin-top: 10px;
   max-width: 40px;
 
+}
 
+#validaNovaSenha {
+  position: relative;
+  text-align: inherit;
+  font-size: small;
+  color: red;
+}
+
+#validaConfirmaNovaSenha {
+
+  position: relative;
+  text-align: inherit;
+  font-size: small;
+  color: red;
 }

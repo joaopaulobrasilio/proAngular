@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 import { NovaSenhaRoutingModule } from './nova-senha-routing.module';
+import { MatInputModule } from '@angular/material/input';
+import { CustomFormsModule } from 'ng2-validation';
+
 
 
 
@@ -13,6 +16,7 @@ import { NovaSenhaRoutingModule } from './nova-senha-routing.module';
 
   ],
   imports: [
+    MatInputModule,
     CommonModule,
     ReactiveFormsModule,
     MatToolbarModule,

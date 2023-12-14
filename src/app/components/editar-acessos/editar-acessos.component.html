@@ -9,20 +9,19 @@
     <div class="form-row" [formGroup]="formulario">
       <div class="form-group col-md-3">
         <label for="inputLogin">Login</label>
-        <input type="email" class="form-control" formControlName="login">
+        <input matInput type="email" class="form-control" formControlName="login">
       </div>
       <div class="form-group col-md-3">
         <label for="inputSenha">Senha</label>
-        <input type="password" class="form-control"formControlName="senha">
+        <input  matInput type="password" class="form-control"formControlName="senha">
       </div>
       <div class="form-group col-md-6">
         <label for="inputDescricao">Descrição</label>
-        <input type="text" class="form-control"  formControlName="descricao">
+        <input matInput type="text" class="form-control"  formControlName="descricao">
       </div>
     </div>
     <div>
       <ng-container >
-<<<<<<< HEAD
         <button
         id="button"
         type="button"
@@ -40,14 +39,6 @@
       Send
     </button>
 
-=======
-        <button mat-fab id="button" (click)=" salvarAcessoEditado()" >
-          <mat-icon>send</mat-icon>
-        </button>
-          <button mat-fab id="button" (click)="voltarParaAcessos()">
-            <mat-icon> keyboard_return</mat-icon>
-          </button>
->>>>>>> bb8bd7514d2228887ea01a25a2a567853699c91d
       </ng-container>
 
 

@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { EditarAcessosComponent } from './editar-acessos.component';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -16,6 +17,7 @@ import { EditarAcessosComponent } from './editar-acessos.component';
    EditarAcessosComponent
   ],
   imports: [
+    MatInputModule,
     CommonModule,
     ReactiveFormsModule,
     MatToolbarModule,
