@@ -61,3 +61,7 @@ legend.scheduler-border {
   height: 0px !important;
   color:  red;
 }
+
+#input{
+width: 100px;
+}

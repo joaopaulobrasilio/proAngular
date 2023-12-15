@@ -56,6 +56,8 @@ export class RedefinirSenhaComponent {
     this.alert.showAlertSucess("Email enviado com Sucesso!");
   }
 
+
+
   resetar() {
     return this.formulario.reset();
   }

@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { NovasenhaService } from "src/app/service/novasenha.service";
 import { HttpErrorResponse } from "@angular/common/http";
 import { AlertmodelserviceService } from "src/app/shared/alertmodelservice.service";
+import { inovaSenha } from "src/app/interfaces/inovaSenha";
 
 @Component({
   selector: "app-nova-senha",
@@ -14,6 +15,7 @@ export class NovaSenhaComponent {
   formulario!: FormGroup;
 
   public token: any;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -27,14 +29,25 @@ export class NovaSenhaComponent {
   ngOnInit() {
     this.pegarTokenurl();
     this.formulario = this.formBuilder.group({
-      novasenha:[null,[Validators.required]],
-      confirmasenha: [null,[Validators.required ]]
-    })
+      password:[null,[Validators.required]],
+      confirmarsenha:[ null,[Validators.required]]
+
+    }
+     )
+
   }
 
   onSubmit() {
-  var inp = document.querySelector('#novasenha')
-  console.log("valor", inp)
+    const oToken = this.route.snapshot.queryParams["token"];
+          this.service.salvarNovaSenha(oToken,this.formulario.value.password).subscribe({
+      next: () =>{
+        this.resetar();
+        this.handerSucess();
+
+      },error: (error) =>{
+        this.handerError();
+      }
+     } )
 
 
 
@@ -50,7 +63,6 @@ export class NovaSenhaComponent {
       {
          next : ()=>{
            console.log("nada")
-
          },
          error: (erro) =>{
            this.router.navigate(['redefinirsenha']);
@@ -60,13 +72,17 @@ export class NovaSenhaComponent {
     )
 
   }
+
+
   handerError() {
     this.alert.showAlertDanger("Token Expirou Solicite novamente!");
   }
 
   handerSucess() {
-    this.alert.showAlertSucess("Email enviado com Sucesso!");
+    this.alert.showAlertSucess("Senha alterada com sucesso!");
   }
 
-
+  resetar() {
+    return this.formulario.reset();
+  }
 }

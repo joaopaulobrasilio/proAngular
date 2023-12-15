@@ -7,31 +7,37 @@
       <div class="form-group col-md-3">
         <mat-form-field appearance="outline">
           <mat-label> Nova Senha</mat-label>
-          <input matInput id="novasenha"
+          <input matInput id="password"
             [type]="mostrarSenha.checked ? 'text' : 'password'"
-            formControlName="novasenha"
+            formControlName="password"
           />
         </mat-form-field>
-         <div *ngIf="formulario.get('novasenha')?.errors?.['required'] && formulario.get('novasenha')?.touched" id="validaNovaSenha">
+         <div *ngIf="formulario.get('password')?.errors?.['required'] && formulario.get('password')?.touched" id="validaNovaSenha">
             Senha é Obrigatório
          </div>
+         <div *ngIf="formulario.get('password')?.value !== formulario.get('confirmarsenha')?.value" id="valordif"  >
+          Valores diferentes
+       </div>
       </div>
       <div class="form-group col-md-3">
         <mat-form-field appearance="outline">
-          <mat-label> Confirma Senha</mat-label>
-          <input matInput id="confirmasenha"
+          <mat-label> Nova Senha</mat-label>
+          <input matInput id="confirmarsenha"
             [type]="mostrarSenha.checked ? 'text' : 'password'"
-            formControlName="confirmasenha"
+            formControlName="confirmarsenha"
           />
         </mat-form-field>
-         <div *ngIf="formulario.get('confirmasenha')?.errors?.['required'] && formulario.get('confirmasenha')?.touched" id="validaConfirmaNovaSenha">
+         <div *ngIf="formulario.get('confirmarsenha')?.errors?.['required'] && formulario.get('confirmarsenha')?.touched" id="validaNovaSenha">
             Senha é Obrigatório
          </div>
+         <div *ngIf="formulario.get('password')?.value !== formulario.get('confirmarsenha')?.value" id="valordif"  >
+          Valores diferentes
+       </div>
       </div>
     </div>
 
     <div>
-      <button id="buttonSubmit" class="btn btn-success" (click)="onSubmit()">
+      <button id="buttonSubmit" class="btn btn-success" (click)="onSubmit()"[disabled]="!formulario.valid || formulario.get('password')?.value !== formulario.get('confirmarsenha')?.value">
         Submit
       </button>
       <button
